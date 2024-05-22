@@ -5,11 +5,20 @@ from database import get_async_session
 from operations.models import operation
 from operations.schemas import OperationCreate
 
+from fastapi_cache.decorator import cache
+
 router = APIRouter(
     prefix="/operations",
     tags=["Operation"]
 )
 
+
+@router.get("/long_operation")
+@cache(expire = 30)
+async def long_operation():
+    import time
+    time.sleep(2)
+    return {"status": "done"}
 
 @router.get("/")
 async def get_specific_operations(operation_type: str, session: AsyncSession = Depends(get_async_session)):
