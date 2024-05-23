@@ -8,6 +8,7 @@ from auth.models import User
 from auth.utils import get_user_db
 from config import SECRET_AUTH
 
+
 class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
     reset_password_token_secret = SECRET_AUTH
     verification_token_secret = SECRET_AUTH

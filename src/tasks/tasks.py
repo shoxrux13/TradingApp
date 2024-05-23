@@ -22,13 +22,13 @@ celery.conf.update(
 
 def get_email_template_dashboard(username: str):
     email = EmailMessage()
-    email['Subject'] = 'Натрейдил Отчет Дашборд'
+    email['Subject'] = 'SheiKh Trading App - Hisobotlar 📊'
     email['From'] = SMTP_USER
-    email['To'] = SMTP_USER
+    email['To'] = 'woxrux6070@gmail.com'
 
     email.set_content(
         '<div>'
-        f'<h1 style="color: red;">Здравствуйте, {username}, а вот и ваш отчет. Зацените 😊</h1>'
+        f'<h1 style="color: red;">Assalomu alaykum, {username}, ma sizning hisobotlaringiz. 😊</h1>'
         '<img src="https://static.vecteezy.com/system/resources/previews/008/295/031/original/custom-relationship'
         '-management-dashboard-ui-design-template-suitable-designing-application-for-android-and-ios-clean-style-app'
         '-mobile-free-vector.jpg" width="600">'
